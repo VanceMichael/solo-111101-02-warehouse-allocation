@@ -3,7 +3,9 @@
   "run_id": "run-watermark",
   "sources": [
     "/warehouse",
-    "/stale"
+    "/stale",
+    "/delta",
+    "/delta"
   ],
   "options": {
     "aliases": {},

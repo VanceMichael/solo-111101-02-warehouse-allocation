@@ -32,7 +32,9 @@
     "run_id": "run-watermark",
     "sources": [
       "/warehouse",
-      "/stale"
+      "/stale",
+      "/delta",
+      "/delta"
     ],
     "options": {
       "aliases": {},
@@ -45,14 +47,16 @@
       "inventory": [
         {
           "sku": "A-01",
-          "available": 11
+          "available": 9
         }
       ],
       "ignored": [
         {
           "reason": "stale_watermark"
         }
-      ]
+      ],
+      "watermark": 105,
+      "delta_watermark": 106
     }
   },
   {

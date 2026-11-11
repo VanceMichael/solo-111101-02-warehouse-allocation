@@ -30,5 +30,11 @@
     {
       "status": 503
     }
+  ],
+  "/delta": [
+    {
+      "status": 200,
+      "file": "delta.csv"
+    }
   ]
 }

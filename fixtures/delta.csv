@@ -1,0 +1,2 @@
+kind,warehouse,sku,delta_physical,delta_reserved,base_watermark,event_watermark,event_id
+delta,ES-1,A-01,-2,0,105,106,ADJ-1
