@@ -1,0 +1,17 @@
+{
+  "name": "watermark",
+  "run_id": "run-watermark",
+  "sources": [
+    "/warehouse",
+    "/stale"
+  ],
+  "options": {
+    "aliases": {},
+    "expected_partitions": [
+      "ES-1",
+      "ES-2"
+    ]
+  },
+  "fixture_root": "fixtures",
+  "portal_database": "portal.sqlite3"
+}

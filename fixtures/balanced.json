@@ -1,0 +1,19 @@
+{
+  "name": "balanced",
+  "run_id": "run-balanced",
+  "sources": [
+    "/warehouse",
+    "/channel"
+  ],
+  "options": {
+    "aliases": {
+      "S-A": "A-01"
+    },
+    "expected_partitions": [
+      "ES-1",
+      "ES-2"
+    ]
+  },
+  "fixture_root": "fixtures",
+  "portal_database": "portal.sqlite3"
+}

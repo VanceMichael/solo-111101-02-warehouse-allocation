@@ -1,0 +1,34 @@
+{
+  "/warehouse": [
+    {
+      "status": 200,
+      "file": "warehouse.csv",
+      "headers": {
+        "ETag": "v1"
+      }
+    }
+  ],
+  "/channel": [
+    {
+      "status": 200,
+      "file": "channel.csv"
+    }
+  ],
+  "/stale": [
+    {
+      "status": 200,
+      "file": "stale.csv"
+    }
+  ],
+  "/bad": [
+    {
+      "status": 200,
+      "file": "bad.csv"
+    }
+  ],
+  "/missing": [
+    {
+      "status": 503
+    }
+  ]
+}

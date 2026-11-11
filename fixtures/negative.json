@@ -1,0 +1,17 @@
+{
+  "name": "negative",
+  "run_id": "run-negative",
+  "sources": [
+    "/warehouse",
+    "/bad"
+  ],
+  "options": {
+    "aliases": {},
+    "expected_partitions": [
+      "ES-1",
+      "ES-2"
+    ]
+  },
+  "fixture_root": "fixtures",
+  "portal_database": "portal.sqlite3"
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "name": "balanced",
+    "run_id": "run-balanced",
+    "sources": [
+      "/warehouse",
+      "/channel"
+    ],
+    "options": {
+      "aliases": {
+        "S-A": "A-01"
+      },
+      "expected_partitions": [
+        "ES-1",
+        "ES-2"
+      ]
+    },
+    "expected": {
+      "inventory": [
+        {
+          "sku": "A-01",
+          "available": 11,
+          "channel_claim": 4,
+          "gap": 7
+        }
+      ],
+      "watermark": 105
+    }
+  },
+  {
+    "name": "watermark",
+    "run_id": "run-watermark",
+    "sources": [
+      "/warehouse",
+      "/stale"
+    ],
+    "options": {
+      "aliases": {},
+      "expected_partitions": [
+        "ES-1",
+        "ES-2"
+      ]
+    },
+    "expected": {
+      "inventory": [
+        {
+          "sku": "A-01",
+          "available": 11
+        }
+      ],
+      "ignored": [
+        {
+          "reason": "stale_watermark"
+        }
+      ]
+    }
+  },
+  {
+    "name": "partition_loss",
+    "run_id": "run-partition_loss",
+    "sources": [
+      "/warehouse",
+      "/missing"
+    ],
+    "options": {
+      "aliases": {},
+      "expected_partitions": [
+        "ES-1",
+        "ES-2",
+        "ES-3"
+      ]
+    },
+    "expected": {
+      "coverage": "partial",
+      "published": false
+    }
+  },
+  {
+    "name": "negative",
+    "run_id": "run-negative",
+    "sources": [
+      "/warehouse",
+      "/bad"
+    ],
+    "options": {
+      "aliases": {},
+      "expected_partitions": [
+        "ES-1",
+        "ES-2"
+      ]
+    },
+    "expected": {
+      "quarantine": [
+        {
+          "sku": "A-01",
+          "reason": "reserved_exceeds_physical"
+        }
+      ],
+      "watermark": 105
+    }
+  }
+]
